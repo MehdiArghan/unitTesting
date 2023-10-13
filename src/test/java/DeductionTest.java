@@ -10,8 +10,8 @@ class DeductionTest {
 
     @BeforeEach
     void setUp() {
-        deduction1 = new Deduction(1, 2);
-        deduction2 = new Deduction(3, 5);
+        deduction1 = new Deduction(5, 12);
+        deduction2 = new Deduction(3, 12);
     }
 
     @Test
@@ -19,19 +19,31 @@ class DeductionTest {
         Deduction sum = deduction1.sum(deduction2);
         String a = String.valueOf(sum.getNumerator());
         String b = String.valueOf(sum.getDenominator());
-        assertEquals("11/10", (a + "/" + b));
+        assertEquals("96/144", (a + "/" + b));
     }
 
     @Test
     void subTract() {
+        Deduction subTract = deduction1.subTract(deduction2);
+        String a = String.valueOf(subTract.getNumerator());
+        String b = String.valueOf(subTract.getDenominator());
+        assertEquals("24/144", (a + "/" + b));
     }
 
     @Test
     void multiply() {
+        Deduction multiply = deduction1.multiply(deduction2);
+        String a = String.valueOf(multiply.getNumerator());
+        String b = String.valueOf(multiply.getDenominator());
+        assertEquals("15/144", (a + "/" + b));
     }
 
     @Test
     void division() {
+        Deduction division = deduction1.division(deduction2);
+        String a = String.valueOf(division.getNumerator());
+        String b = String.valueOf(division.getDenominator());
+        assertEquals("60/36", (a + "/" + b));
     }
 
     @Test
